@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" /> -->
+<link rel="stylesheet" href="/sly-master/main.css">
+<!-- <link rel="stylesheet" href="http://darsa.in/sly/css/font-awesome.css"> -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/sly-master/dist/sly.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('li.topNav').click(function(){
+        location.href= "/diaper/"+$(this).attr('data-value');
+    });
+});
+</script>
+<body>
+
+<div class="pagespan container">
+		<div class="wrap">
+			<div class="scrollbar">
+				<div class="handle">
+					<div class="mousearea"></div>
+				</div>
+			</div>
+
+			<div class="frame" id="cyclepages">
+				<ul class="clearfix">
+          <li data-value="슈퍼대디" class="topNav">슈퍼대디</li>
+          <li data-value="네이처메이드" class="topNav">네이처메이드</li>
+          <li data-value="페넬로페" class="topNav">페넬로페</li>
+          <li data-value="하기스" class="topNav">하기스</li>
+          <li data-value="팸퍼스" class="topNav">팸퍼스</li>
+          <li data-value="군기저귀" class="topNav">군기저귀</li>
+          <li data-value="보솜이" class="topNav">보솜이</li>
+          <li data-value="마미포코" class="topNav">마미포코</li>
+          <li data-value="나비잠" class="topNav">나비잠</li>
+          <li data-value="네이쳐러브메레" class="topNav">네이쳐러브메레</li>
+				</ul>
+			</div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div style="text-align:center;margin-top:20px;margin-bottom:20px;">
+        <strong style="color:#22741C;"><%= keyword %></strong> 검색 결과 입니다.
+    </div>
+
+    <table class="table table-striped">
+<%
+        if (wmpDealImg != '') {
+            for(var i = 0; i < 5; i++) {
+%>
+        <tr>
+            <td style="text-align:center;"><img src="/images/wmp.png" style="width:50px;"/><br/><%=wmpPrice[i]%></td>
+            <td><a href="<%=wmpLinkUrl[i]%>"><img src="<%=wmpDealImg[i]%>" style="width:100px;"/></a></td>
+            <td><%=wmpTitle[i]%></td>
+        </tr>
+<%
+            }
+        }
+
+        if (cpDealImg != '') {
+            for(var i = 0; i < 5; i++) {
+%>
+        <tr>
+            <td style="text-align:center;"><img src="/images/cp.png" style="width:50px;"/><br/><%=cpPrice[i]%></td>
+            <td><a href="<%=cpLinkUrl[i]%>"><img src="<%=cpDealImg[i]%>" style="width:100px;"/></a></td>
+            <td><%=cpTitle[i]%></td>
+        </tr>
+<%
+            }
+        }
+
+        if (tmDealImg != '') {
+          for(var i = 0; i < 5; i++) {
+%>
+        <tr>
+            <td style="text-align:center;"><img src="/images/tm.png" style="width:90px;"/><br/><%=tmPrice[i]%></td>
+            <td><a href="<%=tmLinkUrl[i]%>"><img src="<%=tmDealImg[i]%>" style="width:100px;"/></a></td>
+            <td><%=tmTitle[i]%></td>
+        </tr>
+<%
+            }
+        }
+%>
+    </table>
+    </div>
+</div><!-- /content -->
+
+<script>
+$(function () {
+  $('.frame').sly({
+    horizontal: 1,
+    itemNav: 'forceCentered',
+    smart: 1,
+    activateOn: 'click',
+    scrollBy: 1,
+    touchDragging: 1,
+    mouseDragging: 1,
+    releaseSwing: 1,
+    elasticBounds: 1,
+    dynamicHandle: 1,
+    clickBar: 1,
+    scrollBar: $('.scrollbar'),
+    dragHandle: 1,
+    speed: 600,
+    startAt: 3
+  });
+});
+
+</script>
+</body>
+</html>
