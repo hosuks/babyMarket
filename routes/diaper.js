@@ -1,11 +1,92 @@
 var express = require("express");
 var router = express.Router();
+var app = express();
 var request = require("request");
 var cheerio = require("cheerio");
 var moment = require("moment");
+var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-var Diaper = require("../models/Diaper");
+var BabyMarket = require("../models/BabyMarket");
 
+mongoose.connect(process.env.MONGO_DB); // 1
+var db = mongoose.connection;
+
+db.once("open", function(){
+    console.log("DB connected");
+});
+db.on("error", function(err){
+    console.log("DB ERROR : ", err);
+});
+
+router.use(bodyParser.json()); // support json encoded bodies
+router.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+//-- 토큰 저장
+router.route("/fcm/register").post(function(req, res){
+
+  //console.log(req.body.token);
+  BabyMarket.create({ token:req.body.token, regDate:moment().format('YYYY-MM-DD HH:mm:ss')}, function(err, babyMarket){
+       if(err) {
+         return res.json(err);
+       }
+  });
+  console.log("token === " + req.body.token);
+});
+//-- 푸쉬 발송
+router.route("/fcm/send").post(function(req, res){
+  app.use(bodyParser.urlencoded({ extended: false })); // support encoded bodies
+  var token = new Array();
+  var title = req.body.title;
+  var msg = req.body.message;
+
+  console.log('title === ' + title);
+  console.log('msg === ' + msg);
+
+  if (title == null || title == '') {
+    title = '기저귀 3대천왕';
+  }
+
+  if (msg == null || msg == '') {
+    msg = '우리 아기 기저귀 최저가를 확인하세요.';
+  }
+
+  BabyMarket.find({}, function(err, babyMarket){
+    babyMarket.forEach(function(data){
+      token.push(data.token);
+    });
+
+    var FCM = require('fcm-node');
+
+    var serverKey = 'AIzaSyAh2QdlpXNK07XmX0F-L2GM3ao7uMGZwF8';
+    var fcm = new FCM(serverKey);
+
+    for(var i = 0; i < token.length; i++) {
+      console.log(token[i]);
+      var message = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+          to: token[i],
+          collapse_key: 'your_collapse_key',
+
+          notification: {
+              title: title,
+              body: msg
+          },
+
+          data: {  //you can send only notification or only data(or include both)
+              my_key: 'my value',
+              my_another_key: 'my another value'
+          }
+      };
+
+      fcm.send(message, function(err, response){
+          if (err) {
+              console.log("Something has gone wrong!");
+          } else {
+              console.log("Successfully sent with response: ", response);
+          }
+      });
+    }
+  });
+});
 
 router.route("/:keyword").get(function(req, res){
   var wmpUrl = "http://www.wemakeprice.com/search?search_cate=top&search_keyword=" + encodeURIComponent(req.params.keyword) + "&_service=5&_type=3";
