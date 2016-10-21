@@ -43,7 +43,7 @@ router.route("/fcm/send").post(function(req, res){
   console.log('msg === ' + msg);
 
   if (title == null || title == '') {
-    title = '기저귀 3대천왕';
+    title = '기저귀싸다';
   }
 
   if (msg == null || msg == '') {

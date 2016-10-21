@@ -31,7 +31,7 @@ var j = schedule.scheduleJob('0 11 * * *', function(){
           collapse_key: 'your_collapse_key',
 
           notification: {
-              title: '기저귀 3대천왕',
+              title: '기저귀싸다',
               body: '우리 아기 기저귀 최저가를 확인하세요.'
           },
 
