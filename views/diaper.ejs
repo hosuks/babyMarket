@@ -60,36 +60,46 @@ $(document).ready(function(){
     <table class="table table-striped">
 <%
         if (wmpDealImg != '') {
-            for(var i = 0; i < 5; i++) {
+            var limit = 5;
+            if (wmpDealImg.length < 6) {
+                limit = wmpDealImg.length;
+            }
+            for(var i = 0; i < limit; i++) {
 %>
         <tr>
-            <td style="text-align:center;"><img src="/images/wmp.png" style="width:50px;"/><br/><%=wmpPrice[i]%></td>
+            <td style="text-align:center;vertical-align:middle;"><img src="/images/wmp.png" style="width:50px;"/><br/><%=wmpPrice[i]%></td>
             <td><a href="<%=wmpLinkUrl[i]%>" target="_blank"><img src="<%=wmpDealImg[i]%>" style="width:100px;"/></a></td>
-            <td><%=wmpTitle[i]%></td>
         </tr>
 <%
             }
         }
 
         if (cpDealImg != '') {
-            for(var i = 0; i < 5; i++) {
+            var limit = 5;
+            if (cpDealImg.length < 6) {
+                limit = cpDealImg.length;
+            }
+            for(var i = 0; i < limit; i++) {
 %>
         <tr>
-            <td style="text-align:center;"><img src="/images/cp.png" style="width:50px;"/><br/><%=cpPrice[i]%></td>
+            <td style="text-align:center;"><img src="/images/cp.png" style="width:50px;"/><br/><%=cpPrice[i]%><br/>
+              <span style="font-size:11px;color:red;vertical-align:middle;">(1매당 <%=cpUnitPrice[i]%>원)</span></td>
             <td><a href="<%=cpLinkUrl[i]%>" target="_blank"><img src="<%=cpDealImg[i]%>" style="width:100px;"/></a></td>
-            <td><%=cpTitle[i]%></td>
         </tr>
 <%
             }
         }
 
         if (tmDealImg != '') {
-          for(var i = 0; i < 5; i++) {
+          var limit = 5;
+          if (tmDealImg.length < 6) {
+              limit = tmDealImg.length;
+          }
+          for(var i = 0; i < limit; i++) {
 %>
         <tr>
-            <td style="text-align:center;"><img src="/images/tm.png" style="width:90px;"/><br/><%=tmPrice[i]%></td>
+            <td style="text-align:center;vertical-align:middle;"><img src="/images/tm.png" style="width:90px;"/><br/><%=tmPrice[i]%></td>
             <td><a href="<%=tmLinkUrl[i]%>" target="_blank"><img src="<%=tmDealImg[i]%>" style="width:100px;"/></a></td>
-            <td><%=tmTitle[i]%></td>
         </tr>
 <%
             }

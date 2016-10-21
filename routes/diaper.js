@@ -91,7 +91,6 @@ router.route("/fcm/send").post(function(req, res){
 router.route("/:keyword").get(function(req, res){
   var wmpUrl = "http://www.wemakeprice.com/search?search_cate=top&search_keyword=" + encodeURIComponent(req.params.keyword) + "&_service=5&_type=3";
   var wmpDealImg = [];
-  var wmpTitle = [];
   var wmpPrice = [];
   var wmpLinkUrl = [];
 
@@ -101,17 +100,12 @@ router.route("/:keyword").get(function(req, res){
 
       var $ = cheerio.load(body);
       var dealImg = $("img.lazy");
-      var title = $("strong.tit_desc");
       var price = $("span.sale");
       var linkUrl = $("span.type03");
 
       dealImg.each(function(){
           //console.log($(this).attr('original')+"<br>");
           wmpDealImg.push($(this).attr('original'));
-      });
-
-      title.each(function(){
-          wmpTitle.push($(this).text());
       });
 
       price.each(function(){
@@ -124,9 +118,9 @@ router.route("/:keyword").get(function(req, res){
 
       var cpUrl = "http://www.coupang.com/np/search?q=" + encodeURIComponent(req.params.keyword) + "&channel=user";
       var cpDealImg = [];
-      var cpTitle = [];
       var cpPrice = [];
       var cpLinkUrl = [];
+      var cpUnitPrice = [];
 
       // COUPANG
       request(cpUrl, function(error, response, body){
@@ -134,18 +128,13 @@ router.route("/:keyword").get(function(req, res){
 
           var $ = cheerio.load(body);
           var dealImg = $("dt.image");
-          var title = $("dd.name");
           var price = $("span.rocket");
           var linkUrl = $("li.search-product");
+          var unitPrice = $("span.rocket");
 
           dealImg.each(function(){
               //console.log("http:" + $(this).find('img').attr('src')+"<br>");
               cpDealImg.push("http:" + $(this).find('img').attr('src'));
-          });
-
-          title.each(function(){
-              //console.log($(this).text().trim()+"<br>");
-              cpTitle.push($(this).text().trim());
           });
 
           price.each(function(){
@@ -157,9 +146,12 @@ router.route("/:keyword").get(function(req, res){
               cpLinkUrl.push('http://www.coupang.com' + $(this).find('a').attr('href'));
           });
 
+          unitPrice.each(function(){
+              cpUnitPrice.push($(this).parent().next().find('em').last().text());
+          });
+
           var tmUrl = "http://search.ticketmonster.co.kr/search/?keyword=" + encodeURIComponent(req.params.keyword) + "&thr=ts";
           var tmDealImg = [];
-          var tmTitle = [];
           var tmPrice = [];
           var tmLinkUrl = [];
 
@@ -169,18 +161,12 @@ router.route("/:keyword").get(function(req, res){
 
               var $ = cheerio.load(body);
               var dealImg = $("div.deal_item_thumb");
-              var title = $("strong.deal_item_title");
               var price = $("span.deal_item_price");
               var linkUrl = $("a.deal_item_anchor");
 
               dealImg.each(function(){
                   // console.log($(this).find('img').attr('src')+"<br>");
                   tmDealImg.push($(this).find('img').attr('src'));
-              });
-
-              title.each(function(){
-                  // console.log($(this).text().trim()+"<br>");
-                  tmTitle.push($(this).text().trim());
               });
 
               price.each(function(){
@@ -193,9 +179,9 @@ router.route("/:keyword").get(function(req, res){
               });
 
               res.render("diaper", {
-                                     wmpDealImg:wmpDealImg, wmpTitle:wmpTitle, wmpPrice:wmpPrice, wmpLinkUrl:wmpLinkUrl,
-                                     cpDealImg:cpDealImg, cpTitle:cpTitle, cpPrice:cpPrice, cpLinkUrl:cpLinkUrl,
-                                     tmDealImg:tmDealImg, tmTitle:tmTitle, tmPrice:tmPrice, tmLinkUrl:tmLinkUrl,
+                                     wmpDealImg:wmpDealImg, wmpPrice:wmpPrice, wmpLinkUrl:wmpLinkUrl,
+                                     cpDealImg:cpDealImg, cpPrice:cpPrice, cpLinkUrl:cpLinkUrl, cpUnitPrice:cpUnitPrice,
+                                     tmDealImg:tmDealImg, tmPrice:tmPrice, tmLinkUrl:tmLinkUrl,
                                      keyword:req.params.keyword
                                    });
       });
