@@ -24,9 +24,9 @@ $(document).ready(function(){
         location.href= "/diaper/"+$(this).attr('data-value');
     });
 
-    $('.popup').click() {
+    $('.popup').click(function(){
         window.open($(this).attr('data-value'), '_blank');
-    }
+    });
 });
 </script>
 <body>
@@ -69,7 +69,7 @@ $(document).ready(function(){
 %>
         <tr>
             <td style="text-align:center;"><img src="/images/wmp.png" style="width:50px;"/><br/><%=wmpPrice[i]%></td>
-            <td><a href="#" data-value="<%=wmpLinkUrl[i]%>" class="popup"><img src="<%=wmpDealImg[i]%>" style="width:100px;"/></a></td>
+            <td><a href="" data-value="<%=wmpLinkUrl[i]%>" class="popup"><img src="<%=wmpDealImg[i]%>" style="width:100px;"/></a></td>
             <td><%=wmpTitle[i]%></td>
         </tr>
 <%
