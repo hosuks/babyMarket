@@ -1,119 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <!-- Optional theme -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+<!-- AngularJS 1.5.8 -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
-$(document).ready(function(){
-    $('.topNav').click(function(){
-        location.href= "/diaper/"+$(this).attr('data-value');
-    });
+var app = angular.module('app', []);
+
+app.controller('diaperController', function($scope, $http){
+
+    //-- 기저귀 검색
+    $scope.search = function(keyword) {
+      $http({
+          method: 'POST',
+          url: '/diaper/'+keyword,
+          type : 'json'
+      })
+      .success(function(data, status, headers, config) {
+          $scope.wmpDealImg = data.wmpDealImg;
+          $scope.wmpPrice = data.wmpPrice;
+          $scope.wmpLinkUrl = data.wmpLinkUrl;
+          $scope.cpDealImg = data.cpDealImg;
+          $scope.cpPrice = data.cpPrice;
+          $scope.cpLinkUrl = data.cpLinkUrl;
+          $scope.cpUnitPrice = data.cpUnitPrice;
+          $scope.tmDealImg = data.tmDealImg;
+          $scope.tmPrice = data.tmPrice;
+          $scope.tmLinkUrl = data.tmLinkUrl;
+      })
+      .error(function(data, status, headers, config) {
+          /* 서버와의 연결이 정상적이지 않을 때 처리 */
+          console.log(status);
+      });
+    };
+
+    $scope.search('하기스기저귀');
 });
+
 </script>
-<body>
+<body ng-controller="diaperController">
 
 <div style="text-align:center;margin-top:20px;margin-bottom:20px;">
     <h5>원하시는 기저귀 브랜드를 선택하세요.</h5>
 </div>
+
+<!-- GNB -->
 <div class="row" style="text-align:center;">
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/huggies.png" width="100" data-value="하기스기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/bosomi.png" width="100" data-value="보솜이기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/goon.png" width="100" data-value="군기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/huggies.png" width="100" data-value="하기스기저귀" class="topNav" style="cursor:pointer;" ng-click="search('하기스기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/bosomi.png" width="100" data-value="보솜이기저귀" class="topNav" style="cursor:pointer;" ng-click="search('보솜이기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/goon.png" width="100" data-value="군기저귀" class="topNav" style="cursor:pointer;" ng-click="search('군기저귀');"/>
+    </div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
 </div>
 <div class="row" style="text-align:center;">
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/mamypoko.png" width="100" data-value="마미포코기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/merries.png" width="100" data-value="메리즈기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/nabizam.png" width="100" data-value="나비잠기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/mamypoko.png" width="100" data-value="마미포코기저귀" class="topNav" style="cursor:pointer;" ng-click="search('마미포코기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/merries.png" width="100" data-value="메리즈기저귀" class="topNav" style="cursor:pointer;" ng-click="search('메리즈기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/nabizam.png" width="100" data-value="나비잠기저귀" class="topNav" style="cursor:pointer;" ng-click="search('나비잠기저귀');"/>
+    </div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
 </div>
 <div class="row" style="text-align:center;">
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/pampers.png" width="100" data-value="팸퍼스기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/penelope.png" width="100" data-value="페넬로페기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-3 col-sm-3 col-md-3">
-      <a href="#"><img src="/images/gnb/toddien.png" width="100" data-value="토디앙기저귀" class="topNav"/></a>
-  </div>
-  <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/pampers.png" width="100" data-value="팸퍼스기저귀" class="topNav" style="cursor:pointer;" ng-click="search('팸퍼스기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/penelope.png" width="100" data-value="페넬로페기저귀" class="topNav" style="cursor:pointer;" ng-click="search('페넬로페기저귀');"/>
+    </div>
+    <div class="col-xs-3 col-sm-3 col-md-3">
+        <img src="/images/gnb/toddien.png" width="100" data-value="토디앙기저귀" class="topNav" style="cursor:pointer;" ng-click="search('토디앙기저귀');"/>
+    </div>
+    <div class="col-xs-1 col-sm-1 col-md-1"></div>
 </div>
 
 <div style="margin-bottom:20px;"></div>
 
 <div class="container">
     <table class="table table-striped">
-<%
-        if (wmpDealImg != '') {
-            var limit = 5;
-            if (wmpDealImg.length < 6) {
-                limit = wmpDealImg.length;
-            }
-            for(var i = 0; i < limit; i++) {
-%>
-        <tr>
-            <td style="text-align:center;vertical-align:middle;"><img src="/images/wmp.png" style="width:50px;"/><br/><%=wmpPrice[i]%></td>
-            <td><a href="<%=wmpLinkUrl[i]%>" target="_blank"><img src="<%=wmpDealImg[i]%>" style="width:100px;"/></a></td>
+        <!-- 쿠팡 -->
+        <tr ng-repeat="price in cpPrice | limitTo:5 track by $index ">
+            <td style="text-align:center;vertical-align:middle;"><img src="/images/cp.png" style="width:50px;"/><br/>{{ price }}<br/>
+            <span style="font-size:11px;color:red;vertical-align:middle;">(1매당 {{ cpUnitPrice[$index] }}원)</span></td>
+            <td><a href="{{ cpLinkUrl[$index] }}" target="_blank"><img src="{{ cpDealImg[$index] }}" style="width:100px;"/></a></td>
         </tr>
-<%
-            }
-        }
 
-        if (cpDealImg != '') {
-            var limit = 5;
-            if (cpDealImg.length < 6) {
-                limit = cpDealImg.length;
-            }
-            for(var i = 0; i < limit; i++) {
-%>
-        <tr>
-            <td style="text-align:center;"><img src="/images/cp.png" style="width:50px;"/><br/><%=cpPrice[i]%><br/>
-              <span style="font-size:11px;color:red;vertical-align:middle;">(1매당 <%=cpUnitPrice[i]%>원)</span></td>
-            <td><a href="<%=cpLinkUrl[i]%>" target="_blank"><img src="<%=cpDealImg[i]%>" style="width:100px;"/></a></td>
-        </tr>
-<%
-            }
-        }
+      <!-- 위메프 -->
+      <tr ng-repeat="price in wmpPrice | limitTo:5 track by $index ">
+          <td style="text-align:center;vertical-align:middle;"><img src="/images/wmp.png" style="width:50px;"/><br/>{{price}}</td>
+          <td><a href="{{ wmpLinkUrl[$index] }}" target="_blank"><img src="{{ wmpDealImg[$index] }}" style="width:100px;"/></a></td>
+      </tr>
 
-        if (tmDealImg != '') {
-          var limit = 5;
-          if (tmDealImg.length < 6) {
-              limit = tmDealImg.length;
-          }
-          for(var i = 0; i < limit; i++) {
-%>
-        <tr>
-            <td style="text-align:center;vertical-align:middle;"><img src="/images/tm.png" style="width:90px;"/><br/><%=tmPrice[i]%></td>
-            <td><a href="<%=tmLinkUrl[i]%>" target="_blank"><img src="<%=tmDealImg[i]%>" style="width:100px;"/></a></td>
-        </tr>
-<%
-            }
-        }
-%>
+      <!-- 티몬 -->
+      <tr ng-repeat="price in tmPrice | limitTo:5 track by $index ">
+          <td style="text-align:center;vertical-align:middle;"><img src="/images/tm.png" style="width:90px;"/><br/>{{ price }}</td>
+          <td><a href="{{ tmLinkUrl[$index] }}" target="_blank"><img src="{{ tmDealImg[$index] }}" style="width:100px;"/></a></td>
+      </tr>
     </table>
-    </div>
-</div><!-- /content -->
+</div>
 </body>
 </html>

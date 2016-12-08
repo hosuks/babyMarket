@@ -88,7 +88,16 @@ router.route("/fcm/send").post(function(req, res){
   });
 });
 
+router.route("/").get(function(req, res){
+    res.render("diaper");
+});
+
+//-- APP 업데이트 완료되면 삭제 (임시용)
 router.route("/:keyword").get(function(req, res){
+    res.redirect("/diaper");
+});
+
+router.route("/:keyword").post(function(req, res){
   var wmpUrl = "http://www.wemakeprice.com/search?search_cate=top&search_keyword=" + encodeURIComponent(req.params.keyword) + "&_service=5&_type=3";
   var wmpDealImg = [];
   var wmpPrice = [];
@@ -178,12 +187,25 @@ router.route("/:keyword").get(function(req, res){
                   tmLinkUrl.push($(this).attr('href')+"원");
               });
 
-              res.render("diaper", {
-                                     wmpDealImg:wmpDealImg, wmpPrice:wmpPrice, wmpLinkUrl:wmpLinkUrl,
-                                     cpDealImg:cpDealImg, cpPrice:cpPrice, cpLinkUrl:cpLinkUrl, cpUnitPrice:cpUnitPrice,
-                                     tmDealImg:tmDealImg, tmPrice:tmPrice, tmLinkUrl:tmLinkUrl,
-                                     keyword:req.params.keyword
-                                   });
+              var dataObject = {
+                  wmpDealImg : wmpDealImg,
+                  wmpPrice : wmpPrice,
+                  wmpLinkUrl : wmpLinkUrl,
+                  cpDealImg : cpDealImg,
+                  cpPrice : cpPrice,
+                  cpLinkUrl : cpLinkUrl,
+                  cpUnitPrice : cpUnitPrice,
+                  tmDealImg : tmDealImg,
+                  tmPrice : tmPrice,
+                  tmLinkUrl : tmLinkUrl
+              };
+              res.send(dataObject);
+              // res.render("diaper", {
+              //                        wmpDealImg:wmpDealImg, wmpPrice:wmpPrice, wmpLinkUrl:wmpLinkUrl,
+              //                        cpDealImg:cpDealImg, cpPrice:cpPrice, cpLinkUrl:cpLinkUrl, cpUnitPrice:cpUnitPrice,
+              //                        tmDealImg:tmDealImg, tmPrice:tmPrice, tmLinkUrl:tmLinkUrl,
+              //                        keyword:req.params.keyword
+              //                      });
       });
     });
   });
