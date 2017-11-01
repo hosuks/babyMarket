@@ -114,7 +114,8 @@ router.route("/:keyword").post(function(req, res){
 
       dealImg.each(function(){
           //console.log($(this).attr('original')+"<br>");
-          wmpDealImg.push($(this).attr('original'));
+          console.log($(this).attr('data-original'));
+          wmpDealImg.push($(this).attr('data-original'));
       });
 
       price.each(function(){
@@ -122,7 +123,7 @@ router.route("/:keyword").post(function(req, res){
       });
 
       linkUrl.each(function(){
-          wmpLinkUrl.push('http://www.wemakeprice.com/' + $(this).find('a').attr('href'));
+          wmpLinkUrl.push($(this).find('a').attr('href'));
       });
 
       var cpUrl = "http://www.coupang.com/np/search?q=" + encodeURIComponent(req.params.keyword) + "&channel=user";

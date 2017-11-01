@@ -32,7 +32,7 @@ var j = schedule.scheduleJob('0 9 * * 1', function(){
 
           notification: {
               title: '기저귀싸다',
-              body: '우리 아기 기저귀 최저가를 확인하세요.'
+              body: '[실시간]우리 아기 기저귀 최저가를 확인하세요.'
           },
 
           data: {  //you can send only notification or only data(or include both)
