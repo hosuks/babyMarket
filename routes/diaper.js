@@ -57,7 +57,7 @@ router.route("/fcm/send").post(function(req, res){
 
     var FCM = require('fcm-node');
 
-    var serverKey = 'AIzaSyAh2QdlpXNK07XmX0F-L2GM3ao7uMGZwF8';
+    var serverKey = 'AAAAC1RwAMA:APA91bExyeMnNxQdHstamMAQaAvJSdVky2hQVDlwGkajlUK0tkaE2Jgt-0kl-65yRGD8d8v6mz6w0WQSh4zpTm_--QlRXVzrhyYuwqpVmS-KWR6JBvaI4JQEV3Z9SYULq0CgzzTcN5GgjWNX-K-V2n3HrJTCZG1Unw';
     var fcm = new FCM(serverKey);
 
     for(var i = 0; i < token.length; i++) {

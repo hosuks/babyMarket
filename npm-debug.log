@@ -1,0 +1,577 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ec2-user/.nvm/versions/node/v4.4.5/bin/node',
+1 verbose cli   '/home/ec2-user/.nvm/versions/node/v4.4.5/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'sync' ]
+2 info using npm@2.15.5
+3 info using node@v4.4.5
+4 verbose install initial load of /home/ec2-user/babyMarket/package.json
+5 warn package.json baby@1.0.0 No description
+6 warn package.json baby@1.0.0 No README data
+7 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/body-parser/package.json
+8 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/cheerio/package.json
+9 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/ejs/package.json
+10 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/express/package.json
+11 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/fcm-node/package.json
+12 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/moment/package.json
+13 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/mongoose/package.json
+14 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/node-schedule/package.json
+15 verbose installManyTop reading scoped package data from /home/ec2-user/babyMarket/node_modules/request/package.json
+16 verbose readDependencies loading dependencies from /home/ec2-user/babyMarket/package.json
+17 silly cache add args [ 'sync', null ]
+18 verbose cache add spec sync
+19 silly cache add parsed spec Result {
+19 silly cache add   raw: 'sync',
+19 silly cache add   scope: null,
+19 silly cache add   name: 'sync',
+19 silly cache add   rawSpec: '',
+19 silly cache add   spec: 'latest',
+19 silly cache add   type: 'tag' }
+20 silly addNamed sync@latest
+21 verbose addNamed "latest" is being treated as a dist-tag for sync
+22 info addNameTag [ 'sync', 'latest' ]
+23 silly mapToRegistry name sync
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'sync',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   name: 'sync',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/sync
+28 verbose addNameTag registry:https://registry.npmjs.org/sync not in flight; fetching
+29 verbose request uri https://registry.npmjs.org/sync
+30 verbose request no auth needed
+31 info attempt registry request try #1 at 11:21:34 AM
+32 verbose request id 970574dd4a91cdd3
+33 http request GET https://registry.npmjs.org/sync
+34 http 200 https://registry.npmjs.org/sync
+35 verbose headers { server: 'nginx/1.10.3',
+35 verbose headers   'content-type': 'application/json',
+35 verbose headers   'last-modified': 'Fri, 27 Oct 2017 16:11:20 GMT',
+35 verbose headers   etag: 'W/"59f35aa8-51b8"',
+35 verbose headers   'content-encoding': 'gzip',
+35 verbose headers   'cache-control': 'max-age=300',
+35 verbose headers   'content-length': '4101',
+35 verbose headers   'accept-ranges': 'bytes',
+35 verbose headers   date: 'Wed, 01 Nov 2017 02:21:34 GMT',
+35 verbose headers   via: '1.1 varnish',
+35 verbose headers   age: '0',
+35 verbose headers   connection: 'keep-alive',
+35 verbose headers   'x-served-by': 'cache-sin18022-SIN',
+35 verbose headers   'x-cache': 'MISS',
+35 verbose headers   'x-cache-hits': '0',
+35 verbose headers   'x-timer': 'S1509502895.826657,VS0,VE142',
+35 verbose headers   vary: 'Accept-Encoding, Accept' }
+36 silly get cb [ 200,
+36 silly get   { server: 'nginx/1.10.3',
+36 silly get     'content-type': 'application/json',
+36 silly get     'last-modified': 'Fri, 27 Oct 2017 16:11:20 GMT',
+36 silly get     etag: 'W/"59f35aa8-51b8"',
+36 silly get     'content-encoding': 'gzip',
+36 silly get     'cache-control': 'max-age=300',
+36 silly get     'content-length': '4101',
+36 silly get     'accept-ranges': 'bytes',
+36 silly get     date: 'Wed, 01 Nov 2017 02:21:34 GMT',
+36 silly get     via: '1.1 varnish',
+36 silly get     age: '0',
+36 silly get     connection: 'keep-alive',
+36 silly get     'x-served-by': 'cache-sin18022-SIN',
+36 silly get     'x-cache': 'MISS',
+36 silly get     'x-cache-hits': '0',
+36 silly get     'x-timer': 'S1509502895.826657,VS0,VE142',
+36 silly get     vary: 'Accept-Encoding, Accept' } ]
+37 verbose get saving sync to /home/ec2-user/.npm/registry.npmjs.org/sync/.cache.json
+38 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+39 silly addNameTag next cb for sync with tag latest
+40 silly addNamed sync@0.2.5
+41 verbose addNamed "0.2.5" is a plain semver version for sync
+42 silly mapToRegistry name sync
+43 silly mapToRegistry using default registry
+44 silly mapToRegistry registry https://registry.npmjs.org/
+45 silly mapToRegistry data Result {
+45 silly mapToRegistry   raw: 'sync',
+45 silly mapToRegistry   scope: null,
+45 silly mapToRegistry   name: 'sync',
+45 silly mapToRegistry   rawSpec: '',
+45 silly mapToRegistry   spec: 'latest',
+45 silly mapToRegistry   type: 'tag' }
+46 silly mapToRegistry uri https://registry.npmjs.org/sync
+47 verbose addRemoteTarball https://registry.npmjs.org/sync/-/sync-0.2.5.tgz not in flight; adding
+48 verbose addRemoteTarball [ 'https://registry.npmjs.org/sync/-/sync-0.2.5.tgz',
+48 verbose addRemoteTarball   '3910bb9b66abee56542e2e70f0ce549031252df6' ]
+49 info retry fetch attempt 1 at 11:21:35 AM
+50 info attempt registry request try #1 at 11:21:35 AM
+51 http fetch GET https://registry.npmjs.org/sync/-/sync-0.2.5.tgz
+52 http fetch 200 https://registry.npmjs.org/sync/-/sync-0.2.5.tgz
+53 silly fetchAndShaCheck shasum 3910bb9b66abee56542e2e70f0ce549031252df6
+54 verbose addTmpTarball /tmp/npm-12674-84f7a7ff/registry.npmjs.org/sync/-/sync-0.2.5.tgz not in flight; adding
+55 verbose addTmpTarball already have metadata; skipping unpack for sync@0.2.5
+56 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+57 silly cache afterAdd sync@0.2.5
+58 verbose afterAdd /home/ec2-user/.npm/sync/0.2.5/package/package.json not in flight; writing
+59 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+60 verbose afterAdd /home/ec2-user/.npm/sync/0.2.5/package/package.json written
+61 silly install resolved [ { name: 'sync',
+61 silly install resolved     description: 'Library that makes simple to run asynchronous functions in synchronous manner, using node-fibers.',
+61 silly install resolved     version: '0.2.5',
+61 silly install resolved     url: 'http://github.com/0ctave/node-sync',
+61 silly install resolved     author: { name: 'Yuriy Bogdanov', email: 'chinsay@gmail.com' },
+61 silly install resolved     main: 'lib/sync',
+61 silly install resolved     license: 'MIT',
+61 silly install resolved     repository:
+61 silly install resolved      { type: 'git',
+61 silly install resolved        url: 'https://github.com/ybogdanov/node-sync.git' },
+61 silly install resolved     engines: { node: '>=0.5.2' },
+61 silly install resolved     dependencies: { fibers: '>=0.6' },
+61 silly install resolved     bugs: { url: 'https://github.com/ybogdanov/node-sync/issues' },
+61 silly install resolved     homepage: 'https://github.com/ybogdanov/node-sync',
+61 silly install resolved     _id: 'sync@0.2.5',
+61 silly install resolved     dist:
+61 silly install resolved      { shasum: '3910bb9b66abee56542e2e70f0ce549031252df6',
+61 silly install resolved        tarball: 'https://registry.npmjs.org/sync/-/sync-0.2.5.tgz' },
+61 silly install resolved     _from: 'sync@latest',
+61 silly install resolved     _npmVersion: '1.4.3',
+61 silly install resolved     _npmUser: { name: 'octave', email: 'chinsay@gmail.com' },
+61 silly install resolved     maintainers: [ [Object] ],
+61 silly install resolved     directories: {},
+61 silly install resolved     _shasum: '3910bb9b66abee56542e2e70f0ce549031252df6',
+61 silly install resolved     _resolved: 'https://registry.npmjs.org/sync/-/sync-0.2.5.tgz' } ]
+62 info install sync@0.2.5 into /home/ec2-user/babyMarket
+63 info installOne sync@0.2.5
+64 verbose installOne of sync to /home/ec2-user/babyMarket not in flight; installing
+65 verbose correctMkdir /home/ec2-user/.npm/_locks correctMkdir not in flight; initializing
+66 verbose lock using /home/ec2-user/.npm/_locks/sync-fb4bc180a3c1afbf.lock for /home/ec2-user/babyMarket/node_modules/sync
+67 silly install write writing sync 0.2.5 to /home/ec2-user/babyMarket/node_modules/sync
+68 verbose unbuild node_modules/sync
+69 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync is being purged from base /home/ec2-user/babyMarket
+70 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync
+71 verbose tar unpack /home/ec2-user/.npm/sync/0.2.5/package.tgz
+72 verbose tar unpacking to /home/ec2-user/babyMarket/node_modules/sync
+73 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync is being purged
+74 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync
+75 silly gunzTarPerm modes [ '775', '664' ]
+76 silly gunzTarPerm extractEntry package.json
+77 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+78 silly gunzTarPerm extractEntry .npmignore
+79 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+80 silly gunzTarPerm extractEntry README.md
+81 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+82 silly gunzTarPerm extractEntry LICENSE
+83 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+84 silly gunzTarPerm extractEntry benchmarks/index.js
+85 silly gunzTarPerm modified mode [ 'benchmarks/index.js', 420, 436 ]
+86 silly gunzTarPerm extractEntry examples/async.js
+87 silly gunzTarPerm modified mode [ 'examples/async.js', 420, 436 ]
+88 silly gunzTarPerm extractEntry examples/exceptions.js
+89 silly gunzTarPerm modified mode [ 'examples/exceptions.js', 420, 436 ]
+90 silly gunzTarPerm extractEntry examples/express.js
+91 silly gunzTarPerm modified mode [ 'examples/express.js', 420, 436 ]
+92 silly gunzTarPerm extractEntry examples/fiber.js
+93 silly gunzTarPerm modified mode [ 'examples/fiber.js', 420, 436 ]
+94 silly gunzTarPerm extractEntry examples/future.js
+95 silly gunzTarPerm modified mode [ 'examples/future.js', 420, 436 ]
+96 silly gunzTarPerm extractEntry examples/blocking.js
+97 silly gunzTarPerm modified mode [ 'examples/blocking.js', 420, 436 ]
+98 silly gunzTarPerm extractEntry examples/repl.js
+99 silly gunzTarPerm modified mode [ 'examples/repl.js', 420, 436 ]
+100 silly gunzTarPerm extractEntry examples/scope.js
+101 silly gunzTarPerm modified mode [ 'examples/scope.js', 420, 436 ]
+102 silly gunzTarPerm extractEntry examples/simple.js
+103 silly gunzTarPerm modified mode [ 'examples/simple.js', 420, 436 ]
+104 silly gunzTarPerm extractEntry examples/simple2.js
+105 silly gunzTarPerm modified mode [ 'examples/simple2.js', 420, 436 ]
+106 silly gunzTarPerm extractEntry examples/vars.js
+107 silly gunzTarPerm modified mode [ 'examples/vars.js', 420, 436 ]
+108 silly gunzTarPerm extractEntry examples/object.js
+109 silly gunzTarPerm modified mode [ 'examples/object.js', 420, 436 ]
+110 silly gunzTarPerm extractEntry lib/sync.js
+111 silly gunzTarPerm modified mode [ 'lib/sync.js', 420, 436 ]
+112 silly gunzTarPerm extractEntry test/async.js
+113 silly gunzTarPerm modified mode [ 'test/async.js', 420, 436 ]
+114 silly gunzTarPerm extractEntry test/fiber.js
+115 silly gunzTarPerm modified mode [ 'test/fiber.js', 420, 436 ]
+116 silly gunzTarPerm extractEntry test/future.js
+117 silly gunzTarPerm modified mode [ 'test/future.js', 420, 436 ]
+118 silly gunzTarPerm extractEntry test/index.js
+119 silly gunzTarPerm modified mode [ 'test/index.js', 420, 436 ]
+120 silly gunzTarPerm extractEntry test/sleep.js
+121 silly gunzTarPerm modified mode [ 'test/sleep.js', 420, 436 ]
+122 silly gunzTarPerm extractEntry test/sync.js
+123 silly gunzTarPerm modified mode [ 'test/sync.js', 420, 436 ]
+124 verbose write writing to /home/ec2-user/babyMarket/node_modules/sync/package.json
+125 info preinstall sync@0.2.5
+126 verbose readDependencies loading dependencies from /home/ec2-user/babyMarket/node_modules/sync/package.json
+127 silly prepareForInstallMany adding fibers@>=0.6 from sync dependencies
+128 verbose readDependencies loading dependencies from /home/ec2-user/babyMarket/node_modules/sync/package.json
+129 silly cache add args [ 'fibers@>=0.6', null ]
+130 verbose cache add spec fibers@>=0.6
+131 silly cache add parsed spec Result {
+131 silly cache add   raw: 'fibers@>=0.6',
+131 silly cache add   scope: null,
+131 silly cache add   name: 'fibers',
+131 silly cache add   rawSpec: '>=0.6',
+131 silly cache add   spec: '>=0.6.0',
+131 silly cache add   type: 'range' }
+132 silly addNamed fibers@>=0.6.0
+133 verbose addNamed ">=0.6.0" is a valid semver range for fibers
+134 silly addNameRange { name: 'fibers', range: '>=0.6.0', hasData: false }
+135 silly mapToRegistry name fibers
+136 silly mapToRegistry using default registry
+137 silly mapToRegistry registry https://registry.npmjs.org/
+138 silly mapToRegistry data Result {
+138 silly mapToRegistry   raw: 'fibers',
+138 silly mapToRegistry   scope: null,
+138 silly mapToRegistry   name: 'fibers',
+138 silly mapToRegistry   rawSpec: '',
+138 silly mapToRegistry   spec: 'latest',
+138 silly mapToRegistry   type: 'tag' }
+139 silly mapToRegistry uri https://registry.npmjs.org/fibers
+140 verbose addNameRange registry:https://registry.npmjs.org/fibers not in flight; fetching
+141 verbose request uri https://registry.npmjs.org/fibers
+142 verbose request no auth needed
+143 info attempt registry request try #1 at 11:21:35 AM
+144 http request GET https://registry.npmjs.org/fibers
+145 http 200 https://registry.npmjs.org/fibers
+146 verbose headers { server: 'nginx/1.10.3',
+146 verbose headers   'content-type': 'application/json',
+146 verbose headers   'last-modified': 'Mon, 16 Oct 2017 03:23:52 GMT',
+146 verbose headers   etag: 'W/"59e42648-10471"',
+146 verbose headers   'content-encoding': 'gzip',
+146 verbose headers   'cache-control': 'max-age=300',
+146 verbose headers   'content-length': '11908',
+146 verbose headers   'accept-ranges': 'bytes',
+146 verbose headers   date: 'Wed, 01 Nov 2017 02:21:35 GMT',
+146 verbose headers   via: '1.1 varnish',
+146 verbose headers   age: '0',
+146 verbose headers   connection: 'keep-alive',
+146 verbose headers   'x-served-by': 'cache-sin18022-SIN',
+146 verbose headers   'x-cache': 'HIT',
+146 verbose headers   'x-cache-hits': '0',
+146 verbose headers   'x-timer': 'S1509502896.791223,VS0,VE143',
+146 verbose headers   vary: 'Accept-Encoding, Accept' }
+147 silly get cb [ 200,
+147 silly get   { server: 'nginx/1.10.3',
+147 silly get     'content-type': 'application/json',
+147 silly get     'last-modified': 'Mon, 16 Oct 2017 03:23:52 GMT',
+147 silly get     etag: 'W/"59e42648-10471"',
+147 silly get     'content-encoding': 'gzip',
+147 silly get     'cache-control': 'max-age=300',
+147 silly get     'content-length': '11908',
+147 silly get     'accept-ranges': 'bytes',
+147 silly get     date: 'Wed, 01 Nov 2017 02:21:35 GMT',
+147 silly get     via: '1.1 varnish',
+147 silly get     age: '0',
+147 silly get     connection: 'keep-alive',
+147 silly get     'x-served-by': 'cache-sin18022-SIN',
+147 silly get     'x-cache': 'HIT',
+147 silly get     'x-cache-hits': '0',
+147 silly get     'x-timer': 'S1509502896.791223,VS0,VE143',
+147 silly get     vary: 'Accept-Encoding, Accept' } ]
+148 verbose get saving fibers to /home/ec2-user/.npm/registry.npmjs.org/fibers/.cache.json
+149 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+150 silly addNameRange number 2 { name: 'fibers', range: '>=0.6.0', hasData: true }
+151 silly addNameRange versions [ 'fibers',
+151 silly addNameRange   [ '0.1.0',
+151 silly addNameRange     '0.1.1',
+151 silly addNameRange     '0.1.2',
+151 silly addNameRange     '0.1.3',
+151 silly addNameRange     '0.1.4',
+151 silly addNameRange     '0.1.6',
+151 silly addNameRange     '0.1.7',
+151 silly addNameRange     '0.1.8',
+151 silly addNameRange     '0.2.0',
+151 silly addNameRange     '0.2.1',
+151 silly addNameRange     '0.2.2',
+151 silly addNameRange     '0.2.3',
+151 silly addNameRange     '0.2.4',
+151 silly addNameRange     '0.2.5',
+151 silly addNameRange     '0.2.6',
+151 silly addNameRange     '0.5.0',
+151 silly addNameRange     '0.6.0',
+151 silly addNameRange     '0.5.1',
+151 silly addNameRange     '0.6.1',
+151 silly addNameRange     '0.6.2',
+151 silly addNameRange     '0.6.3',
+151 silly addNameRange     '0.6.4',
+151 silly addNameRange     '0.6.5',
+151 silly addNameRange     '0.6.6',
+151 silly addNameRange     '0.6.7',
+151 silly addNameRange     '0.6.8',
+151 silly addNameRange     '0.6.9',
+151 silly addNameRange     '1.0.0',
+151 silly addNameRange     '1.0.1',
+151 silly addNameRange     '1.0.2',
+151 silly addNameRange     '1.0.4',
+151 silly addNameRange     '1.0.5',
+151 silly addNameRange     '1.0.6-b',
+151 silly addNameRange     '1.0.7',
+151 silly addNameRange     '1.0.8',
+151 silly addNameRange     '1.0.9',
+151 silly addNameRange     '1.0.10',
+151 silly addNameRange     '1.0.11',
+151 silly addNameRange     '1.0.12',
+151 silly addNameRange     '1.0.13',
+151 silly addNameRange     '1.0.14',
+151 silly addNameRange     '1.0.15',
+151 silly addNameRange     '2.0.0' ] ]
+152 silly addNamed fibers@2.0.0
+153 verbose addNamed "2.0.0" is a plain semver version for fibers
+154 silly mapToRegistry name fibers
+155 silly mapToRegistry using default registry
+156 silly mapToRegistry registry https://registry.npmjs.org/
+157 silly mapToRegistry data Result {
+157 silly mapToRegistry   raw: 'fibers',
+157 silly mapToRegistry   scope: null,
+157 silly mapToRegistry   name: 'fibers',
+157 silly mapToRegistry   rawSpec: '',
+157 silly mapToRegistry   spec: 'latest',
+157 silly mapToRegistry   type: 'tag' }
+158 silly mapToRegistry uri https://registry.npmjs.org/fibers
+159 verbose addRemoteTarball https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz not in flight; adding
+160 verbose addRemoteTarball [ 'https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz',
+160 verbose addRemoteTarball   'f26d0aaf1f99995fbe1cb3f340efac08bda9dc4b' ]
+161 info retry fetch attempt 1 at 11:21:36 AM
+162 info attempt registry request try #1 at 11:21:36 AM
+163 http fetch GET https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz
+164 http fetch 200 https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz
+165 silly fetchAndShaCheck shasum f26d0aaf1f99995fbe1cb3f340efac08bda9dc4b
+166 verbose addTmpTarball /tmp/npm-12674-84f7a7ff/registry.npmjs.org/fibers/-/fibers-2.0.0.tgz not in flight; adding
+167 verbose addTmpTarball already have metadata; skipping unpack for fibers@2.0.0
+168 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+169 silly cache afterAdd fibers@2.0.0
+170 verbose afterAdd /home/ec2-user/.npm/fibers/2.0.0/package/package.json not in flight; writing
+171 verbose correctMkdir /home/ec2-user/.npm correctMkdir not in flight; initializing
+172 verbose afterAdd /home/ec2-user/.npm/fibers/2.0.0/package/package.json written
+173 silly install resolved [ { name: 'fibers',
+173 silly install resolved     version: '2.0.0',
+173 silly install resolved     description: 'Cooperative multi-tasking for Javascript',
+173 silly install resolved     keywords:
+173 silly install resolved      [ 'fiber',
+173 silly install resolved        'fibers',
+173 silly install resolved        'coroutine',
+173 silly install resolved        'thread',
+173 silly install resolved        'async',
+173 silly install resolved        'parallel',
+173 silly install resolved        'worker',
+173 silly install resolved        'future',
+173 silly install resolved        'promise' ],
+173 silly install resolved     homepage: 'https://github.com/laverdet/node-fibers',
+173 silly install resolved     author:
+173 silly install resolved      { name: 'Marcel Laverdet',
+173 silly install resolved        email: 'marcel@laverdet.com',
+173 silly install resolved        url: 'https://github.com/laverdet/' },
+173 silly install resolved     main: 'fibers',
+173 silly install resolved     scripts:
+173 silly install resolved      { install: 'node build.js || nodejs build.js',
+173 silly install resolved        test: 'node test.js || nodejs test.js' },
+173 silly install resolved     repository:
+173 silly install resolved      { type: 'git',
+173 silly install resolved        url: 'git://github.com/laverdet/node-fibers.git' },
+173 silly install resolved     license: 'MIT',
+173 silly install resolved     engines: { node: '>=0.5.2' },
+173 silly install resolved     bugs: { url: 'https://github.com/laverdet/node-fibers/issues' },
+173 silly install resolved     _id: 'fibers@2.0.0',
+173 silly install resolved     _npmVersion: '5.0.0',
+173 silly install resolved     _nodeVersion: '8.0.0',
+173 silly install resolved     _npmUser: { name: 'laverdet', email: 'marcel.npm@laverdet.com' },
+173 silly install resolved     dist:
+173 silly install resolved      { integrity: 'sha512-sLxo4rZVk7xLgAjb/6zEzHJfSALx6u6coN1z61XCOF7i6CyTdJawF4+RdpjCSeS8AP66eR2InScbYAz9RAVOgA==',
+173 silly install resolved        shasum: 'f26d0aaf1f99995fbe1cb3f340efac08bda9dc4b',
+173 silly install resolved        tarball: 'https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz' },
+173 silly install resolved     maintainers: [ [Object] ],
+173 silly install resolved     _npmOperationalInternal:
+173 silly install resolved      { host: 's3://npm-registry-packages',
+173 silly install resolved        tmp: 'tmp/fibers-2.0.0.tgz_1496688401588_0.38031439599581063' },
+173 silly install resolved     directories: {},
+173 silly install resolved     _shasum: 'f26d0aaf1f99995fbe1cb3f340efac08bda9dc4b',
+173 silly install resolved     _resolved: 'https://registry.npmjs.org/fibers/-/fibers-2.0.0.tgz',
+173 silly install resolved     _from: 'fibers@>=0.6.0' } ]
+174 info install fibers@2.0.0 into /home/ec2-user/babyMarket/node_modules/sync
+175 info installOne fibers@2.0.0
+176 verbose installOne of fibers to /home/ec2-user/babyMarket/node_modules/sync not in flight; installing
+177 verbose correctMkdir /home/ec2-user/.npm/_locks correctMkdir not in flight; initializing
+178 verbose lock using /home/ec2-user/.npm/_locks/fibers-9915a48e9ba33a9e.lock for /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+179 silly install write writing fibers 2.0.0 to /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+180 verbose unbuild node_modules/sync/node_modules/fibers
+181 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers is being purged from base /home/ec2-user/babyMarket
+182 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+183 verbose tar unpack /home/ec2-user/.npm/fibers/2.0.0/package.tgz
+184 verbose tar unpacking to /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+185 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers is being purged
+186 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+187 silly gunzTarPerm modes [ '775', '664' ]
+188 silly gunzTarPerm extractEntry package.json
+189 silly gunzTarPerm modified mode [ 'package.json', 420, 436 ]
+190 silly gunzTarPerm extractEntry .npmignore
+191 silly gunzTarPerm modified mode [ '.npmignore', 420, 436 ]
+192 silly gunzTarPerm extractEntry README.md
+193 silly gunzTarPerm modified mode [ 'README.md', 420, 436 ]
+194 silly gunzTarPerm extractEntry LICENSE
+195 silly gunzTarPerm modified mode [ 'LICENSE', 420, 436 ]
+196 silly gunzTarPerm extractEntry quick-test.js
+197 silly gunzTarPerm modified mode [ 'quick-test.js', 420, 436 ]
+198 silly gunzTarPerm extractEntry build.js
+199 silly gunzTarPerm modified mode [ 'build.js', 493, 509 ]
+200 silly gunzTarPerm extractEntry future.js
+201 silly gunzTarPerm modified mode [ 'future.js', 420, 436 ]
+202 silly gunzTarPerm extractEntry test.js
+203 silly gunzTarPerm modified mode [ 'test.js', 493, 509 ]
+204 silly gunzTarPerm extractEntry fibers.js
+205 silly gunzTarPerm modified mode [ 'fibers.js', 420, 436 ]
+206 silly gunzTarPerm extractEntry .travis.yml
+207 silly gunzTarPerm modified mode [ '.travis.yml', 420, 436 ]
+208 silly gunzTarPerm extractEntry binding.gyp
+209 silly gunzTarPerm modified mode [ 'binding.gyp', 420, 436 ]
+210 silly gunzTarPerm extractEntry bin/.npmignore
+211 silly gunzTarPerm modified mode [ 'bin/.npmignore', 420, 436 ]
+212 silly gunzTarPerm extractEntry bin/win32-x64-57/fibers.node
+213 silly gunzTarPerm modified mode [ 'bin/win32-x64-57/fibers.node', 493, 509 ]
+214 silly gunzTarPerm extractEntry bin/darwin-ia32-57/fibers.node
+215 silly gunzTarPerm modified mode [ 'bin/darwin-ia32-57/fibers.node', 493, 509 ]
+216 silly gunzTarPerm extractEntry bin/darwin-x64-48/fibers.node
+217 silly gunzTarPerm modified mode [ 'bin/darwin-x64-48/fibers.node', 493, 509 ]
+218 silly gunzTarPerm extractEntry bin/darwin-x64-57/fibers.node
+219 silly gunzTarPerm modified mode [ 'bin/darwin-x64-57/fibers.node', 493, 509 ]
+220 silly gunzTarPerm extractEntry bin/linux-ia32-48/fibers.node
+221 silly gunzTarPerm modified mode [ 'bin/linux-ia32-48/fibers.node', 493, 509 ]
+222 silly gunzTarPerm extractEntry bin/linux-ia32-57/fibers.node
+223 silly gunzTarPerm modified mode [ 'bin/linux-ia32-57/fibers.node', 493, 509 ]
+224 silly gunzTarPerm extractEntry bin/darwin-ia32-48/fibers.node
+225 silly gunzTarPerm modified mode [ 'bin/darwin-ia32-48/fibers.node', 493, 509 ]
+226 silly gunzTarPerm extractEntry bin/linux-x64-57/fibers.node
+227 silly gunzTarPerm modified mode [ 'bin/linux-x64-57/fibers.node', 493, 509 ]
+228 silly gunzTarPerm extractEntry bin/repl
+229 silly gunzTarPerm modified mode [ 'bin/repl', 493, 509 ]
+230 silly gunzTarPerm extractEntry bin/win32-ia32-48/fibers.node
+231 silly gunzTarPerm modified mode [ 'bin/win32-ia32-48/fibers.node', 420, 436 ]
+232 silly gunzTarPerm extractEntry bin/win32-ia32-57/fibers.node
+233 silly gunzTarPerm modified mode [ 'bin/win32-ia32-57/fibers.node', 493, 509 ]
+234 silly gunzTarPerm extractEntry bin/win32-x64-48/fibers.node
+235 silly gunzTarPerm modified mode [ 'bin/win32-x64-48/fibers.node', 420, 436 ]
+236 silly gunzTarPerm extractEntry bin/linux-x64-48/fibers.node
+237 silly gunzTarPerm modified mode [ 'bin/linux-x64-48/fibers.node', 493, 509 ]
+238 silly gunzTarPerm extractEntry src/coroutine.cc
+239 silly gunzTarPerm modified mode [ 'src/coroutine.cc', 420, 436 ]
+240 silly gunzTarPerm extractEntry src/coroutine.h
+241 silly gunzTarPerm modified mode [ 'src/coroutine.h', 420, 436 ]
+242 silly gunzTarPerm extractEntry src/fibers.cc
+243 silly gunzTarPerm modified mode [ 'src/fibers.cc', 420, 436 ]
+244 silly gunzTarPerm extractEntry src/libcoro/README
+245 silly gunzTarPerm modified mode [ 'src/libcoro/README', 420, 436 ]
+246 silly gunzTarPerm extractEntry src/libcoro/LICENSE
+247 silly gunzTarPerm modified mode [ 'src/libcoro/LICENSE', 420, 436 ]
+248 silly gunzTarPerm extractEntry src/libcoro/conftest.c
+249 silly gunzTarPerm modified mode [ 'src/libcoro/conftest.c', 420, 436 ]
+250 silly gunzTarPerm extractEntry src/libcoro/coro.c
+251 silly gunzTarPerm modified mode [ 'src/libcoro/coro.c', 420, 436 ]
+252 silly gunzTarPerm extractEntry src/libcoro/coro.h
+253 silly gunzTarPerm modified mode [ 'src/libcoro/coro.h', 420, 436 ]
+254 silly gunzTarPerm extractEntry src/v8-version.h
+255 silly gunzTarPerm modified mode [ 'src/v8-version.h', 420, 436 ]
+256 silly gunzTarPerm extractEntry test/already-running.js
+257 silly gunzTarPerm modified mode [ 'test/already-running.js', 420, 436 ]
+258 silly gunzTarPerm extractEntry test/exit.js
+259 silly gunzTarPerm modified mode [ 'test/exit.js', 420, 436 ]
+260 silly gunzTarPerm extractEntry test/fibonacci.js
+261 silly gunzTarPerm modified mode [ 'test/fibonacci.js', 420, 436 ]
+262 silly gunzTarPerm extractEntry test/finish-multiple.js
+263 silly gunzTarPerm modified mode [ 'test/finish-multiple.js', 420, 436 ]
+264 silly gunzTarPerm extractEntry test/exec.js
+265 silly gunzTarPerm modified mode [ 'test/exec.js', 420, 436 ]
+266 silly gunzTarPerm extractEntry test/future.js
+267 silly gunzTarPerm modified mode [ 'test/future.js', 420, 436 ]
+268 silly gunzTarPerm extractEntry test/illegal-yield.js
+269 silly gunzTarPerm modified mode [ 'test/illegal-yield.js', 420, 436 ]
+270 silly gunzTarPerm extractEntry test/pool.js
+271 silly gunzTarPerm modified mode [ 'test/pool.js', 420, 436 ]
+272 silly gunzTarPerm extractEntry test/process-title.js
+273 silly gunzTarPerm modified mode [ 'test/process-title.js', 420, 436 ]
+274 silly gunzTarPerm extractEntry test/stack-overflow.js
+275 silly gunzTarPerm modified mode [ 'test/stack-overflow.js', 420, 436 ]
+276 silly gunzTarPerm extractEntry test/current.js
+277 silly gunzTarPerm modified mode [ 'test/current.js', 420, 436 ]
+278 silly gunzTarPerm extractEntry test/stack-overflow2.js
+279 silly gunzTarPerm modified mode [ 'test/stack-overflow2.js', 493, 509 ]
+280 silly gunzTarPerm extractEntry test/child-process.js
+281 silly gunzTarPerm modified mode [ 'test/child-process.js', 420, 436 ]
+282 silly gunzTarPerm extractEntry test/started.js
+283 silly gunzTarPerm modified mode [ 'test/started.js', 420, 436 ]
+284 silly gunzTarPerm extractEntry test/bad-context.js
+285 silly gunzTarPerm modified mode [ 'test/bad-context.js', 420, 436 ]
+286 silly gunzTarPerm extractEntry test/unwind.js
+287 silly gunzTarPerm modified mode [ 'test/unwind.js', 420, 436 ]
+288 silly gunzTarPerm extractEntry test/future-exception.js
+289 silly gunzTarPerm modified mode [ 'test/future-exception.js', 420, 436 ]
+290 verbose write writing to /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers/package.json
+291 info preinstall fibers@2.0.0
+292 verbose readDependencies loading dependencies from /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers/package.json
+293 verbose readDependencies loading dependencies from /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers/package.json
+294 silly install resolved []
+295 verbose about to build /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+296 info build /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+297 info linkStuff fibers@2.0.0
+298 silly linkStuff fibers@2.0.0 has /home/ec2-user/babyMarket/node_modules/sync/node_modules as its parent node_modules
+299 verbose linkBins fibers@2.0.0
+300 verbose linkMans fibers@2.0.0
+301 verbose rebuildBundles fibers@2.0.0
+302 info install fibers@2.0.0
+303 verbose unsafe-perm in lifecycle true
+304 info fibers@2.0.0 Failed to exec install script
+305 verbose unlock done using /home/ec2-user/.npm/_locks/fibers-9915a48e9ba33a9e.lock for /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+306 verbose about to build /home/ec2-user/babyMarket/node_modules/sync
+307 verbose unlock done using /home/ec2-user/.npm/_locks/sync-fb4bc180a3c1afbf.lock for /home/ec2-user/babyMarket/node_modules/sync
+308 verbose stack Error: fibers@2.0.0 install: `node build.js || nodejs build.js`
+308 verbose stack spawn ENOENT
+308 verbose stack     at ChildProcess.<anonymous> (/home/ec2-user/.nvm/versions/node/v4.4.5/lib/node_modules/npm/lib/utils/spawn.js:17:16)
+308 verbose stack     at emitTwo (events.js:87:13)
+308 verbose stack     at ChildProcess.emit (events.js:172:7)
+308 verbose stack     at maybeClose (internal/child_process.js:827:16)
+308 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+309 verbose pkgid fibers@2.0.0
+310 verbose cwd /home/ec2-user/babyMarket
+311 error Linux 4.9.43-17.38.amzn1.x86_64
+312 error argv "/home/ec2-user/.nvm/versions/node/v4.4.5/bin/node" "/home/ec2-user/.nvm/versions/node/v4.4.5/bin/npm" "install" "--save" "sync"
+313 error node v4.4.5
+314 error npm  v2.15.5
+315 error file sh
+316 error code ELIFECYCLE
+317 error errno ENOENT
+318 error syscall spawn
+319 error fibers@2.0.0 install: `node build.js || nodejs build.js`
+319 error spawn ENOENT
+320 error Failed at the fibers@2.0.0 install script 'node build.js || nodejs build.js'.
+320 error This is most likely a problem with the fibers package,
+320 error not with npm itself.
+320 error Tell the author that this fails on your system:
+320 error     node build.js || nodejs build.js
+320 error You can get information on how to open an issue for this project with:
+320 error     npm bugs fibers
+320 error Or if that isn't available, you can get their info via:
+320 error
+320 error     npm owner ls fibers
+320 error There is likely additional logging output above.
+321 verbose exit [ 1, true ]
+322 verbose unbuild node_modules/sync/node_modules/fibers
+323 info preuninstall fibers@2.0.0
+324 info uninstall fibers@2.0.0
+325 verbose unbuild rmStuff fibers@2.0.0 from /home/ec2-user/babyMarket/node_modules
+326 verbose unbuild rmStuff in /home/ec2-user/babyMarket/node_modules/sync/node_modules
+327 info postuninstall fibers@2.0.0
+328 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers is being purged from base /home/ec2-user/babyMarket
+329 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+330 silly vacuum-fs purging /home/ec2-user/babyMarket/node_modules/sync/node_modules/fibers
+331 silly vacuum-fs removing /home/ec2-user/babyMarket/node_modules/sync/node_modules
+332 silly vacuum-fs quitting because other entries in /home/ec2-user/babyMarket/node_modules/sync
+333 verbose unbuild node_modules/sync
+334 info preuninstall sync@0.2.5
+335 info uninstall sync@0.2.5
+336 verbose unbuild rmStuff sync@0.2.5 from /home/ec2-user/babyMarket/node_modules
+337 info postuninstall sync@0.2.5
+338 silly gentlyRm /home/ec2-user/babyMarket/node_modules/sync is being purged from base /home/ec2-user/babyMarket
+339 verbose gentlyRm don't care about contents; nuking /home/ec2-user/babyMarket/node_modules/sync
+340 silly vacuum-fs purging /home/ec2-user/babyMarket/node_modules/sync
+341 silly vacuum-fs quitting because other entries in /home/ec2-user/babyMarket/node_modules

@@ -4,7 +4,7 @@ var schedule = require("node-schedule");
 var BabyMarket = require("./models/BabyMarket");
 var FCM = require('fcm-node');
 
-var j = schedule.scheduleJob('0 9 * * 1', function(){
+var j = schedule.scheduleJob('01 12 * * *', function(){
   mongoose.connect(process.env.MONGO_DB); // 1
   var db = mongoose.connection;
 
@@ -22,7 +22,7 @@ var j = schedule.scheduleJob('0 9 * * 1', function(){
       token.push(data.token);
     });
 
-    var serverKey = 'AIzaSyAh2QdlpXNK07XmX0F-L2GM3ao7uMGZwF8';
+    var serverKey = 'AAAAC1RwAMA:APA91bExyeMnNxQdHstamMAQaAvJSdVky2hQVDlwGkajlUK0tkaE2Jgt-0kl-65yRGD8d8v6mz6w0WQSh4zpTm_--QlRXVzrhyYuwqpVmS-KWR6JBvaI4JQEV3Z9SYULq0CgzzTcN5GgjWNX-K-V2n3HrJTCZG1Unw';
     var fcm = new FCM(serverKey);
 
     for(var i = 0; i < token.length; i++) {
@@ -32,7 +32,7 @@ var j = schedule.scheduleJob('0 9 * * 1', function(){
 
           notification: {
               title: '기저귀싸다',
-              body: '[실시간]우리 아기 기저귀 최저가를 확인하세요.'
+              body: '우리 아기 기저귀 최저가를 확인하세요.'
           },
 
           data: {  //you can send only notification or only data(or include both)
